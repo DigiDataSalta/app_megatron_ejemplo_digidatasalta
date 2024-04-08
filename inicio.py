@@ -73,6 +73,7 @@ def logout():
     st.success("Sesión cerrada exitosamente")
 
 def main():
+    st.title(":red[Pagina de Ejemplo]")
     st.title("📱:blue[Megatron Accesorios]")
 
     if logged_in:
@@ -80,7 +81,6 @@ def main():
 
         if user_rol == "admin":
             selected_option = st.sidebar.selectbox("Seleccione una opción:", ["Ventas", "Pedidos", "Servicios Tecnicos", "Usuarios"])
-            selected_option = st.sidebar.selectbox("Seleccione una opción:", ["Ventas", "Pedidos", "Servicios Tecnicos"])
             if selected_option == "Ventas":
                 with st.expander('Ingresar Venta'):
                     venta(st.session_state.user_nombre_apellido)
@@ -132,6 +132,8 @@ def main():
         st.sidebar.title("Inicio de Sesión")
 
         with st.form(key="login_form"):
+            st.subheader("Nombre de Usuario: digidatasalta")
+            st.subheader("Contraseña: digidatasalta")
             username = st.text_input("Nombre de Usuario:")
             password = st.text_input("Contraseña:", type="password")
 
